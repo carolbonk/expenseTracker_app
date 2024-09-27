@@ -1,6 +1,7 @@
 import 'package:expense_tracker/widgets/new_expense.dart';
 import 'package:flutter/material.dart';
 import 'expenses_list/expenses_list.dart';
+import 'chart/chart.dart';
 import '../models/expense.dart';
 
 class Expenses extends StatefulWidget {
@@ -94,7 +95,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          const Text('The chart'),
+          Chart(expenses: _registeredExpenses),
           Expanded(
             child: mainContent,
           ),
@@ -103,17 +104,3 @@ class _ExpensesState extends State<Expenses> {
     );
   }
 }
-
-
-// body: LayoutBuilder(
-      //   builder: (context, constraints) {
-      //     return Column(
-      //       children: [
-      //         const Text('The chart'),
-      //         Expanded(
-      //           child: ExpensesList(expenses: _registeredExpenses),
-      //         ),
-      //       ],
-      //     );
-      //   },
-      // ),
