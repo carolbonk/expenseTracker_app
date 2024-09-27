@@ -91,12 +91,17 @@ class _NewExpenseState extends State<NewExpense> {
           ),
           Row(
             children: [
-              TextField(
-                controller: _amountController,
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  prefixText: '\$ ',
-                  label: Text('Amount'),
+              Expanded(
+                child: TextField(
+                  controller: _amountController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    prefixText: '\$ ',
+                    label: Text('Amount'),
+                    // labelStyle: TextStyle(
+                    //   color: Color.fromARGB(255, 14, 13, 20),
+                    // ),
+                  ),
                 ),
               ),
               const SizedBox(width: 16),
@@ -130,6 +135,7 @@ class _NewExpenseState extends State<NewExpense> {
                       (category) => DropdownMenuItem(
                         value: category,
                         child: Text(category.name.toUpperCase()),
+                        //color: category.color,
                       ),
                     )
                     .toList(),
