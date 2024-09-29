@@ -119,6 +119,8 @@ class _NewExpenseState extends State<NewExpense> {
                     ],
                   )
                 else
+                  //Expanded(
+                  //child:
                   TextField(
                     controller: _titleController,
                     maxLength: 50,
@@ -126,6 +128,7 @@ class _NewExpenseState extends State<NewExpense> {
                       label: Text('Title'),
                     ),
                   ),
+                //),
                 if (width >= 600)
                   Row(children: [
                     DropdownButton(
@@ -151,37 +154,40 @@ class _NewExpenseState extends State<NewExpense> {
                           });
                         }),
                     const SizedBox(width: 24),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            _selectedDate == null
-                                ? 'No date selected'
-                                : formatter.format(_selectedDate!),
-                          ),
-                          IconButton(
-                            onPressed: _presentDatePicker,
-                            icon: const Icon(
-                              Icons.calendar_month,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    // Expanded(
+                    //   child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.end,
+                    //     crossAxisAlignment: CrossAxisAlignment.center,
+                    //     children: [
+                    //       Text(
+                    //         style: const TextStyle(
+                    //             color: Color.fromARGB(255, 26, 25, 25)),
+                    //         _selectedDate == null
+                    //             ? 'No date selected'
+                    //             : formatter.format(_selectedDate!),
+                    //       ),
+                    //       IconButton(
+                    //         onPressed: _presentDatePicker,
+                    //         icon: const Icon(
+                    //           Icons.calendar_month,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                   ])
                 else
-                  Expanded(
-                    child: TextField(
-                      controller: _amountController,
-                      keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(
-                        prefixText: '\$ ',
-                        label: Text('Amount'),
-                      ),
+                  //Expanded(
+                  //child:
+                  TextField(
+                    controller: _amountController,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      prefixText: '\$ ',
+                      label: Text('Amount'),
                     ),
                   ),
+                //),
                 const SizedBox(width: 16),
                 Row(
                   children: [
@@ -192,6 +198,8 @@ class _NewExpenseState extends State<NewExpense> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
+                            style: const TextStyle(
+                                color: Color.fromARGB(255, 26, 25, 25)),
                             _selectedDate == null
                                 ? 'No date selected'
                                 : formatter.format(_selectedDate!),
@@ -228,7 +236,6 @@ class _NewExpenseState extends State<NewExpense> {
                             .map(
                               (category) => DropdownMenuItem(
                                 value: category,
-                                //TextStyle: const TextStyle(color: Colors.black),
                                 child: Text(
                                   category.name.toUpperCase(),
                                   style: const TextStyle(
