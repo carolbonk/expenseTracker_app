@@ -152,7 +152,7 @@ class _NewExpenseState extends State<NewExpense> {
                             return;
                           }
                           setState(() {
-                            _selectedCategory = value;
+                            _selectedCategory = value as Category;
                           });
                         }),
                     const SizedBox(width: 24),
@@ -252,7 +252,7 @@ class _NewExpenseState extends State<NewExpense> {
                             return;
                           }
                           setState(() {
-                            _selectedCategory = value;
+                            _selectedCategory = value as Category;
                           });
                         }),
                     const Spacer(),
