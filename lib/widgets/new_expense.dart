@@ -113,6 +113,8 @@ class _NewExpenseState extends State<NewExpense> {
                           decoration: const InputDecoration(
                             prefixText: '\$ ',
                             label: Text('Amount'),
+                            labelStyle: TextStyle(color: Colors.grey),
+                            //
                           ),
                         ),
                       ),
@@ -185,6 +187,7 @@ class _NewExpenseState extends State<NewExpense> {
                     decoration: const InputDecoration(
                       prefixText: '\$ ',
                       label: Text('Amount'),
+                      labelStyle: TextStyle(color: Colors.grey),
                     ),
                   ),
                 //),
